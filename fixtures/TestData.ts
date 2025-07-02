@@ -1,8 +1,8 @@
 export const TestData = {
   users: {
     validUser: {
-      email: 'test@example.com',
-      password: 'Test123!@#',
+      email: 'pwrighttest@playwrighttest.com',
+      password: 'BNB,m#%B6=d]m+#',
       firstName: 'John',
       lastName: 'Doe',
       phone: '555-123-4567',
@@ -11,8 +11,8 @@ export const TestData = {
         city: 'New York',
         state: 'NY',
         zip: '10001',
-        country: 'USA'
-      }
+        country: 'USA',
+      },
     },
     invalidUser: {
       email: 'invalid-email',
@@ -25,11 +25,11 @@ export const TestData = {
         city: '',
         state: '',
         zip: '',
-        country: ''
-      }
-    }
+        country: '',
+      },
+    },
   },
-  
+
   products: {
     laptop: {
       name: 'MacBook Pro 16"',
@@ -37,7 +37,7 @@ export const TestData = {
       category: 'Electronics',
       sku: 'MBP-16-2023',
       stock: 50,
-      description: 'Latest MacBook Pro with M3 chip'
+      description: 'Latest MacBook Pro with M3 chip',
     },
     phone: {
       name: 'iPhone 15 Pro',
@@ -45,7 +45,7 @@ export const TestData = {
       category: 'Electronics',
       sku: 'IP15-PRO-128',
       stock: 100,
-      description: 'Latest iPhone with titanium design'
+      description: 'Latest iPhone with titanium design',
     },
     book: {
       name: 'Clean Code',
@@ -53,49 +53,49 @@ export const TestData = {
       category: 'Books',
       sku: 'BOOK-CC-001',
       stock: 200,
-      description: 'A Handbook of Agile Software Craftsmanship'
-    }
+      description: 'A Handbook of Agile Software Craftsmanship',
+    },
   },
-  
+
   creditCards: {
     valid: {
       number: '4242424242424242',
       name: 'John Doe',
       expiry: '12/25',
-      cvv: '123'
+      cvv: '123',
     },
     invalid: {
       number: '1234567890123456',
       name: '',
       expiry: '00/00',
-      cvv: '000'
-    }
+      cvv: '000',
+    },
   },
-  
+
   urls: {
     production: 'https://example.com',
     staging: 'https://staging.example.com',
     development: 'http://localhost:3000',
     api: {
       v1: 'https://api.example.com/v1',
-      v2: 'https://api.example.com/v2'
-    }
+      v2: 'https://api.example.com/v2',
+    },
   },
-  
+
   timeouts: {
     short: 5000,
     medium: 10000,
     long: 30000,
-    extraLong: 60000
+    extraLong: 60000,
   },
-  
+
   messages: {
     success: {
       login: 'Successfully logged in',
       logout: 'Successfully logged out',
       purchase: 'Thank you for your purchase!',
       update: 'Profile updated successfully',
-      delete: 'Item deleted successfully'
+      delete: 'Item deleted successfully',
     },
     error: {
       invalidCredentials: 'Invalid email or password',
@@ -103,68 +103,68 @@ export const TestData = {
       invalidEmail: 'Please enter a valid email address',
       networkError: 'Network error. Please try again.',
       serverError: 'Internal server error',
-      notFound: 'Page not found'
+      notFound: 'Page not found',
     },
     validation: {
       minLength: 'Minimum length is',
       maxLength: 'Maximum length is',
       pattern: 'Invalid format',
-      required: 'Required field'
-    }
+      required: 'Required field',
+    },
   },
-  
+
   selectors: {
     common: {
-      submitButton: '[data-testid="submit-button"]',
+      submitButton: 'button[type="submit"]',
       cancelButton: '[data-testid="cancel-button"]',
       loader: '[data-testid="loader"]',
       errorMessage: '[data-testid="error-message"]',
       successMessage: '[data-testid="success-message"]',
       modal: '[data-testid="modal"]',
-      modalClose: '[data-testid="modal-close"]'
+      modalClose: '[data-testid="modal-close"]',
     },
     forms: {
-      emailInput: '[data-testid="email-input"]',
-      passwordInput: '[data-testid="password-input"]',
+      emailInput: '#email',
+      passwordInput: 'input[name="password"]',
       firstNameInput: '[data-testid="firstname-input"]',
       lastNameInput: '[data-testid="lastname-input"]',
       phoneInput: '[data-testid="phone-input"]',
-      addressInput: '[data-testid="address-input"]'
+      addressInput: '[data-testid="address-input"]',
     },
     navigation: {
       mainMenu: '[data-testid="main-menu"]',
       sidebar: '[data-testid="sidebar"]',
       breadcrumb: '[data-testid="breadcrumb"]',
-      pagination: '[data-testid="pagination"]'
-    }
+      pagination: '[data-testid="pagination"]',
+    },
   },
-  
+
   api: {
     endpoints: {
       auth: {
         login: '/auth/login',
         logout: '/auth/logout',
         register: '/auth/register',
-        resetPassword: '/auth/reset-password'
+        resetPassword: '/auth/reset-password',
       },
       users: {
         profile: '/users/profile',
         update: '/users/update',
         delete: '/users/delete',
-        list: '/users'
+        list: '/users',
       },
       products: {
         list: '/products',
         detail: '/products/:id',
         create: '/products/create',
         update: '/products/update/:id',
-        delete: '/products/delete/:id'
-      }
+        delete: '/products/delete/:id',
+      },
     },
     headers: {
       contentType: 'application/json',
       accept: 'application/json',
-      authorization: 'Bearer '
-    }
-  }
+      authorization: 'Bearer ',
+    },
+  },
 };

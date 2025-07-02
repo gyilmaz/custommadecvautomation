@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { CustomMadeCVLoginPage as LoginPage } from '../pages/CustomMadeCVLoginPage';
 import { TestData } from '../fixtures/TestData';
 import { TestHelpers } from '../fixtures/TestHelpers';
 
