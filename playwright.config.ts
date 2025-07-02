@@ -9,7 +9,15 @@ export default defineConfig({
   reporter: [
     ['html', { outputFolder: 'reports/html' }],
     ['json', { outputFile: 'reports/results.json' }],
-    ['list']
+    ['list'],
+    ['./reporters/summary-reporter.ts', { 
+      outputFile: 'reports/summary.txt',
+      showError: true,
+      showPassed: true,
+      showFailed: true,
+      showSkipped: true,
+      showFlaky: true
+    }]
   ],
   use: {
     baseURL: 'https://custommadecv.com',
