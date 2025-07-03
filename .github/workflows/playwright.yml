@@ -33,15 +33,15 @@ jobs:
       run: npx playwright install --with-deps ${{ matrix.project }}
     
     - name: Run Playwright tests
-      run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --reporter=blob
       env:
         CI: true
     
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report-${{ matrix.project }}-${{ matrix.shardIndex }}
-        path: playwright-report/
+        name: blob-report-${{ matrix.project }}-${{ matrix.shardIndex }}
+        path: blob-report/
         retention-days: 30
     
     - uses: actions/upload-artifact@v4
@@ -70,7 +70,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         path: all-reports/
-        pattern: playwright-report-*
+        pattern: blob-report-*
     
     - name: Merge reports
       run: npx playwright merge-reports --reporter html ./all-reports
