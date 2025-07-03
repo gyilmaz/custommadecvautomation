@@ -74,7 +74,6 @@ test.describe('Job Tracker Tests', () => {
     await jobTrackerPage.searchByCompany('Test Company ABC');
     
     // Verify filtered results
-    const jobCount = await jobTrackerPage.getJobCount();
     const jobRow = await jobTrackerPage.getJobByCompanyAndPosition(jobData.company, jobData.position);
     await expect(jobRow).toBeVisible();
   });

@@ -72,11 +72,25 @@ jobs:
         path: all-reports/
         pattern: blob-report-*
     
+    - name: List downloaded artifacts
+      run: |
+        echo "Contents of all-reports directory:"
+        ls -la all-reports/ || echo "all-reports directory not found"
+        echo "Finding all report files:"
+        find all-reports -name "*.zip" -o -name "report*.json" || echo "No report files found"
+    
     - name: Merge reports
-      run: npx playwright merge-reports --reporter html ./all-reports
+      run: |
+        if [ -d "all-reports" ] && [ "$(ls -A all-reports/)" ]; then
+          npx playwright merge-reports --reporter html ./all-reports/blob-report-*
+        else
+          echo "No reports to merge"
+          exit 1
+        fi
     
     - name: Upload HTML report
       uses: actions/upload-artifact@v4
+      if: success()
       with:
         name: html-report--attempt-${{ github.run_attempt }}
         path: playwright-report

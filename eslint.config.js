@@ -1,10 +1,11 @@
 import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
+import globals from 'globals';
 
 export default [
   {
-    ignores: ['node_modules/**', 'dist/**', 'test-results/**', 'playwright-report/**']
+    ignores: ['node_modules/**', 'dist/**', 'test-results/**', 'playwright-report/**', 'blob-report/**', 'reports/**', 'all-reports/**']
   },
   js.configs.recommended,
   {
@@ -16,24 +17,10 @@ export default [
         sourceType: 'module'
       },
       globals: {
-        ...js.configs.recommended.languageOptions.globals,
+        ...globals.node,
+        ...globals.browser,
         console: 'readonly',
-        process: 'readonly',
-        Buffer: 'readonly',
-        __dirname: 'readonly',
-        __filename: 'readonly',
-        global: 'readonly',
-        setTimeout: 'readonly',
-        clearTimeout: 'readonly',
-        setInterval: 'readonly',
-        clearInterval: 'readonly',
-        window: 'readonly',
-        document: 'readonly',
-        localStorage: 'readonly',
-        sessionStorage: 'readonly',
-        HTMLElement: 'readonly',
-        performance: 'readonly',
-        PerformanceNavigationTiming: 'readonly'
+        process: 'readonly'
       }
     },
     plugins: {

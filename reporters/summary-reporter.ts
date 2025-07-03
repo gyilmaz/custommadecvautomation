@@ -58,7 +58,7 @@ export default class SummaryReporter implements Reporter {
     }
   }
 
-  async onEnd(result: FullResult) {
+  async onEnd(_result: FullResult) {
     const summary = this.generateSummary();
     
     // Print to console
